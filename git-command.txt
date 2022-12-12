@@ -1,0 +1,13 @@
+git clone "URL"
+
+git status
+
+git add .
+
+git restore .
+
+git commit -m "Commit message"
+
+git push origin
+
+git pull
