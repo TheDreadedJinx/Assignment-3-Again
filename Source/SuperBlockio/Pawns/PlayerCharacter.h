@@ -100,6 +100,10 @@ protected:
     UPROPERTY()
         TEnumAsByte<ETimelineDirection::Type> Gravity;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
+        class UPaperFlipbookComponent* PlayerAnimation;
+
+
     FOnTimelineFloat onTimelineCallback;
     FOnTimelineEventStatic onTimelineFinishedCallback;
 

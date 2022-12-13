@@ -13,6 +13,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Components/ArrowComponent.h"
 #include "Components/BoxComponent.h"
+#include "PaperFlipbookComponent.h"
 
 #include "Components/TimelineComponent.h"
 #include "Curves/CurveFloat.h"
@@ -79,6 +80,9 @@ APlayerCharacter::APlayerCharacter()
     FollowCamera->SetOrthoWidth(5000.0f);
 	//CALL SetupAttachment on FollowCamera passing in SpringArmComponent
     FollowCamera->SetupAttachment(SpringArmComponent);
+
+    PlayerAnimation = CreateDefaultSubobject<UPaperFlipbookComponent>("Player_Animation");
+    PlayerAnimation->SetupAttachment(RootComponent);
 
     /*Timeline Curve set*/
     static ConstructorHelpers::FObjectFinder<UCurveFloat> Curve(TEXT("/Game/Curves/C_JumpCurve"));
@@ -278,7 +282,7 @@ void APlayerCharacter::MoveRight(float value)
             if(TravelDirection < 0.0f)
             {
             	//CALL SetRelativeRotation() on PlayerSprite passing in FRotator(FRotator::ZeroRotator)
-                PlayerSprite->SetRelativeRotation(FRotator(FRotator::ZeroRotator));
+                PlayerAnimation->SetRelativeRotation(FRotator(FRotator::ZeroRotator));
 
             	//SET DirectionEnum to EDirectionEnum::DE_Right
                 DirectionEnum = EDirectionEnum::DE_Right;
@@ -287,7 +291,7 @@ void APlayerCharacter::MoveRight(float value)
             else if (TravelDirection > 0.0f)
             {
             	//CALL SetRelativeRotation() on PlayerSprite passing in FRotator(0.f, 180.f, 0.f)
-                PlayerSprite->SetRelativeRotation(FRotator(0.0f, 180.0f, 0.0f));
+                PlayerAnimation->SetRelativeRotation(FRotator(0.0f, 180.0f, 0.0f));
 
             	//SET DirectionEnum to EDirectionEnum::DE_Left
                 DirectionEnum = EDirectionEnum::DE_Left;
