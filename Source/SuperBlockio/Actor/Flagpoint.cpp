@@ -67,7 +67,7 @@ void AFlagpoint::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* Oth
         	//CALL OnCheckpoint() on FlagComponent passing in this->GetActorLocation()
             FlagComponent->OnCheckpoint(this->GetActorLocation());
         	//CALL SetSprite() on FlagSprite passin in --> Cast<UPaperSprite>(StaticLoadObject(UPaperSprite::StaticClass(), NULL, TEXT("/Game/Textures/8Bit_Checkpoint_ON_Sprite")))
-            FlagSprite->SetSprite(Cast<UPaperSprite>(StaticLoadObject(UPaperSprite::StaticClass(), NULL, TEXT("/Game/Textures/8Bit_Checkpoint_ON_Sprite"))));
+            FlagSprite->SetSprite(Cast<UPaperSprite>(StaticLoadObject(UPaperSprite::StaticClass(), NULL, TEXT("/Game/Textures/Flag_ON_Sprite"))));
         }
     	//ELSE IF Flagtype IS EFlagEnum::Goal
         else if (Flagtype == EFlagEnum::Goal)

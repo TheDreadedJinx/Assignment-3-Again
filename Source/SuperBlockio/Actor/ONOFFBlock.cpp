@@ -81,13 +81,13 @@ void AONOFFBlock::SwitchStates()
         if (OnOffComponent->GetState())
         {
         	//CALL SetSprite() on BlockSprite passing in --> Cast<UPaperSprite>(StaticLoadObject(UPaperSprite::StaticClass(), NULL, TEXT("/Game/Textures/8Bit_ONOFF_SwitchON_Sprite")))
-            BlockSprite->SetSprite(Cast<UPaperSprite>(StaticLoadObject(UPaperSprite::StaticClass(), NULL, TEXT("/Game/Textures/8Bit_ONOFF_SwitchON_Sprite"))));
+            BlockSprite->SetSprite(Cast<UPaperSprite>(StaticLoadObject(UPaperSprite::StaticClass(), NULL, TEXT("/Game/Textures/Vines_ON_Sprite"))));
         }
     	//ELSE
         else
         {
         	//CALL SetSprite() on BlockSprite passing in --> StaticLoadObject(UPaperSprite::StaticClass(), NULL, TEXT("/Game/Textures/8Bit_ONOFF_SwitchOFF_Sprite")))
-            BlockSprite->SetSprite(Cast<UPaperSprite>(StaticLoadObject(UPaperSprite::StaticClass(), NULL, TEXT("/Game/Textures/8Bit_ONOFF_SwitchOFF_Sprite"))));
+            BlockSprite->SetSprite(Cast<UPaperSprite>(StaticLoadObject(UPaperSprite::StaticClass(), NULL, TEXT("/Game/Textures/Vines_OFF_Sprite"))));
         }
     	//ENDIF
     }
